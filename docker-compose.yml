@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+  # asyrv Server
+  asyrv:
+    container_name: asyrv
+    tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - "./src:/var/www/html/asyrv/"
+    ports:
+      - "80:80"
+      - "3306:3306"
